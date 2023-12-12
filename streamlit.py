@@ -11,7 +11,7 @@ data = pd.read_csv('combined.csv')
 st.subheader('Гистограма распределения')
 
 column_name = st.selectbox('Выберете признак',('TARGET','AGE','SOCSTATUS_WORK_FL','SOCSTATUS_PENS_FL','GENDER',
-'CHILD_TOTAL','DEPENDANTS','PERSONAL_INCOME','LOAN_NUM_TOTAL','LOAN_NUM_CLOSED'))
+'CHILD_TOTAL','DEPENDANTS','PERSONAL_INCOME','LOAN_NUM_TOTAL','LOAN_NUM_CLOSED'),key = 1)
 
 if len(data[column_name].unique())>100:
     bins_hs = 100
@@ -24,7 +24,7 @@ ax.hist(data[column_name],bins = bins_hs)
 st.pyplot(fig)
 
 column_name_2 = st.selectbox('Выберете признак',('TARGET','AGE','SOCSTATUS_WORK_FL','SOCSTATUS_PENS_FL','GENDER',
-'CHILD_TOTAL','DEPENDANTS','PERSONAL_INCOME','LOAN_NUM_TOTAL','LOAN_NUM_CLOSED'))
+'CHILD_TOTAL','DEPENDANTS','PERSONAL_INCOME','LOAN_NUM_TOTAL','LOAN_NUM_CLOSED'),key = 2)
 
 st.dataframe(data[column_name_2].describe())
 
