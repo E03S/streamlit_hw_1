@@ -40,3 +40,18 @@ plt.yticks(range(len(data.columns)),data.columns)
 
 st.pyplot(fig_2)
 
+st.subheader('Распределения признаков при разных целевых')
+
+column_name_3 = st.selectbox('Выберете признак',('AGE','SOCSTATUS_WORK_FL','SOCSTATUS_PENS_FL','GENDER',
+'CHILD_TOTAL','DEPENDANTS','PERSONAL_INCOME','LOAN_NUM_TOTAL','LOAN_NUM_CLOSED'),key = 3)
+
+if len(data[column_name_3].unique())>100:
+    bins_hs = 100
+else:
+    bins_hs = len(data[column_name_3].unique())
+
+fig_3, ax_3 = plt.subplots(2)
+ax_3[0].hist(data[data['TARGET']==1][column_name_3],bins = bins_hs)
+ax_3[0].title('Целевая переменная 1')
+ax_3[1].hist(data[data['TARGET']==0][column_name_3],bins = bins_hs)
+ax_3[1].title('Целевая переменная 0')
