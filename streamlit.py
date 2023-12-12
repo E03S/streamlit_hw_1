@@ -52,6 +52,8 @@ else:
 
 fig_3, ax_3 = plt.subplots(2)
 ax_3[0].hist(data[data['TARGET']==1][column_name_3],bins = bins_hs)
-ax_3[0].title('Целевая переменная 1')
+ax_3[0].set_title('Целевая переменная 1')
 ax_3[1].hist(data[data['TARGET']==0][column_name_3],bins = bins_hs)
-ax_3[1].title('Целевая переменная 0')
+ax_3[1].set_title('Целевая переменная 0')
+
+st.pyplot(fig_3)
