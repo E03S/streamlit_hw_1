@@ -25,7 +25,7 @@ st.pyplot(fig)
 
 fig_2, ax_2 = plt.subplots()
 clb = ax_2.matshow(data.corr())
-a = fig_2.colorbar(clb)
+fig_2.colorbar(clb)
 
 st.pyplot(a)
 
