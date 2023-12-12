@@ -23,10 +23,14 @@ ax.hist(data[column_name],bins = bins_hs)
 
 st.pyplot(fig)
 
-column_name_2 = st.selectbox('Выберете признак',('TARGET','AGE','SOCSTATUS_WORK_FL','SOCSTATUS_PENS_FL','GENDER',
+st.subheader('Числовые характеристики')
+
+column_name_2 = st.selectbox('Выберете признак',('AGE','SOCSTATUS_WORK_FL','SOCSTATUS_PENS_FL','GENDER',
 'CHILD_TOTAL','DEPENDANTS','PERSONAL_INCOME','LOAN_NUM_TOTAL','LOAN_NUM_CLOSED'),key = 2)
 
 st.dataframe(data[column_name_2].describe())
+
+st.subheader('Матрица корреляции')
 
 fig_2, ax_2 = plt.subplots()
 clb = ax_2.matshow(data.corr())
