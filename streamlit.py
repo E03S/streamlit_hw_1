@@ -13,4 +13,4 @@ st.subheader('Гистограма распределения')
 column_name = st.selectbox('Выберете признак',('AGREEMENT_RK','TARGET','AGE','SOCSTATUS_WORK_FL','SOCSTATUS_PENS_FL','GENDER',
 'CHILD_TOTAL','DEPENDANTS','PERSONAL_INCOME','LOAN_NUM_TOTAL','LOAN_NUM_CLOSED'))
 
-st.pyplot(plt.hist(df_selected[column_name],bins = len(df_selected[column_name].unique())))
+st.pyplot(plt.hist(data[column_name],bins = len(data[column_name].unique())))
