@@ -23,13 +23,14 @@ ax.hist(data[column_name],bins = bins_hs)
 
 st.pyplot(fig)
 
-fig_2, ax_2 = plt.subplots()
-clb = ax_2.matshow(data.corr())
-fig_2.colorbar(clb)
-
-st.pyplot(a)
-
 column_name_2 = st.selectbox('Выберете признак',('TARGET','AGE','SOCSTATUS_WORK_FL','SOCSTATUS_PENS_FL','GENDER',
 'CHILD_TOTAL','DEPENDANTS','PERSONAL_INCOME','LOAN_NUM_TOTAL','LOAN_NUM_CLOSED'))
 
 st.dataframe(data[column_name_2].describe())
+
+fig_2, ax_2 = plt.subplots()
+clb = ax_2.matshow(data.corr())
+fig_2.colorbar(clb)
+
+st.pyplot(fig_2)
+
