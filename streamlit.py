@@ -35,8 +35,8 @@ st.subheader('Матрица корреляции')
 fig_2, ax_2 = plt.subplots()
 clb = ax_2.matshow(data.corr())
 fig_2.colorbar(clb)
-plt.xticks(data.columns, fontsize=14, rotation=45)
-plt.yticks(data.columns, fontsize=14, rotation=45)
+plt.xticks(range(len(data.columns)),data.columns, fontsize=14, rotation=45)
+plt.yticks(range(len(data.columns)),data.columns, fontsize=14, rotation=45)
 
 st.pyplot(fig_2)
 
